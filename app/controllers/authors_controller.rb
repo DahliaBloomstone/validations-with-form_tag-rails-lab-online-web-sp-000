@@ -1,3 +1,4 @@
+#author.rb has active record validations 
 class AuthorsController < ApplicationController
 
   def show
@@ -28,7 +29,7 @@ class AuthorsController < ApplicationController
     if @author.valid? #is author valid? name, unique email, 10 num phone number
        @author.save #save if yes
     redirect_to author_path(@author)
-  else #if invalid, render the edit form 
+  else #if invalid, render the edit form
     render :edit
     end
   end
