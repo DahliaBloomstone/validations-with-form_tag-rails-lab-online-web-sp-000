@@ -1,4 +1,5 @@
 class AuthorsController < ApplicationController
+
   def show
     set_author
   end
