@@ -26,9 +26,9 @@ class AuthorsController < ApplicationController
     set_author
     @author.update(author_params)
     if @author.valid? #is author valid? name, unique email, 10 num phone number
-       @author.save
+       @author.save #save if yes
     redirect_to author_path(@author)
-    else
+  else #if invalid, render the edit form 
     render :edit
     end
   end
