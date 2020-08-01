@@ -11,9 +11,9 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params) #create a new, unsaved not validated Author object from the form.
     if @author.valid? #run validations without saving, true if valid
-      @author.save #instructs browser to perform a new request 
+      @author.save #instructs browser to perform a new request
       redirect_to author_path(@author)
-    else
+    else #if author is invalid, hold on to @author, full of error messages. rerender the :new page 
     render :new
     end
   end
