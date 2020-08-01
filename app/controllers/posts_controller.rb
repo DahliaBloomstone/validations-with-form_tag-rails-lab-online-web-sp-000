@@ -1,4 +1,4 @@
-#models/post.rb has active record validations: 
+#models/post.rb has active record validations: title, content, category for posts
 class PostsController < ApplicationController
   def show
     set_post
