@@ -1,7 +1,7 @@
 <!-- prefilling form values, author object  //-->
 
 <%= form_tag("/authors") do %>
-  <% if @author.errors.any? %> <!-- displaying all errors with errors.full_messages //-->
+  <% if @author.errors.any? %> <!-- first check if there are errors to display with @author.errors.any? then displaying all errors with errors.full_messages //-->
     <div id="error_explanation">
       <h2>There were some errors:</h2>
       <ul>
