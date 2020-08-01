@@ -1,3 +1,4 @@
+#models/post.rb has active record validations: 
 class PostsController < ApplicationController
   def show
     set_post
