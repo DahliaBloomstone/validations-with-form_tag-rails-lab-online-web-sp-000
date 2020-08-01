@@ -13,7 +13,7 @@ class AuthorsController < ApplicationController
     if @author.valid? #run validations without saving, true if valid
       @author.save #instructs browser to perform a new request
       redirect_to author_path(@author)
-    else #if author is invalid, hold on to @author, full of error messages. rerender the :new page 
+    else #if author is invalid, hold on to @author, full of error messages. rerender the :new page
     render :new
     end
   end
@@ -25,7 +25,7 @@ class AuthorsController < ApplicationController
   def update
     set_author
     @author.update(author_params)
-    if @author.valid?
+    if @author.valid? #is author valid? name, unique email, 10 num phone number
        @author.save
     redirect_to author_path(@author)
     else
