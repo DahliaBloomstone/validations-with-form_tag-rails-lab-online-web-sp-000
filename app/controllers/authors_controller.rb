@@ -9,8 +9,8 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    @author = Author.new(author_params)
-    if @author.valid?
+    @author = Author.new(author_params) #create a new, unsaved not validated Author object from the form.
+    if @author.valid? #run validations without saving, true if valid
       @author.save
       redirect_to author_path(@author)
     else
