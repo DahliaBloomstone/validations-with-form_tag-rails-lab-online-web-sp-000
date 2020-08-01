@@ -1,3 +1,15 @@
+<%= form_tag("/posts") do %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <h2>Editing "<%= @post.title %>"</h2>
 <%= form_tag post_path(@post), method: "patch" do %>
   <div class="field">
@@ -22,4 +34,3 @@
   </div>
   <%= submit_tag "Update" %>
 <% end %>
-
